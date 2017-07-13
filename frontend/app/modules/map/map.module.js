@@ -2,5 +2,7 @@
 'use strict';
 
 angular
-	.module('map.module', [])
+	.module('map.module', [
+		'map.routes',
+		'map.controller'])
 })();
