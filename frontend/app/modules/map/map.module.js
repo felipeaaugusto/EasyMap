@@ -3,6 +3,8 @@
 
 angular
 	.module('map.module', [
+		'map.controller',
 		'map.routes',
-		'map.controller'])
+		'map.service',
+		'vector.service'])
 })();

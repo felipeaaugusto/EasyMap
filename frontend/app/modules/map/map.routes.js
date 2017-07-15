@@ -5,10 +5,10 @@
 config.$inject = ['$urlRouterProvider', '$stateProvider'];
 
 function config ($urlRouterProvider, $stateProvider){
+
 	$urlRouterProvider.otherwise('/');
 
-	$stateProvider
-	.state('map', {
+	$stateProvider.state('map', {
 		title: 'Map',
 		url: '/map',
 		templateUrl: 'app/modules/map/map.view.html',
@@ -18,6 +18,6 @@ function config ($urlRouterProvider, $stateProvider){
 };
 
 angular
-	.module('map.routes', [])
+	.module('map.routes', ["ui.router"])
 	.config(config);
 })();
