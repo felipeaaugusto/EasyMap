@@ -6,5 +6,6 @@ angular
 		'map.controller',
 		'map.routes',
 		'map.service',
-		'vector.service'])
+		'vector.module',
+		'interaction.module'])
 })();
