@@ -4,12 +4,15 @@
   "description": "",
   "main": "app.module.js",
   "scripts": {
+    "start": "http-server -a localhost -p 8080",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies" : {
     "angular" : "1.6.5",
-    "openlayers" : "4.1.1"
+    "openlayers" : "4.1.1",
+    "angular-ui-router" : "1.0.3",
+    "http-server" : "0.10.0"
   }
 }
