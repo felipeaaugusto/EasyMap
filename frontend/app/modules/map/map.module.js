@@ -4,6 +4,7 @@
 angular
 	.module('map.module', [
 		'map.controller',
+		'map.directives',
 		'map.routes',
 		'map.service',
 		'interaction.module',

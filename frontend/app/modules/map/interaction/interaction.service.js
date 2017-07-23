@@ -2,9 +2,9 @@
 'use strict';
 
 /* ngInject */
-InteractionService.$inject = ['StyleService'];
+InteractionService.$inject = ['StyleService', 'ngDialog'];
 
-function InteractionService(StyleService) {
+function InteractionService(StyleService, ngDialog) {
 
     function interactionMouseHover(map, vectorSource){
 
@@ -18,6 +18,7 @@ function InteractionService(StyleService) {
         selectPointerMove.on('select', function(features) {
             features.selected.forEach(function(feature) {
                 feature.setStyle(getStyleTextFeature(feature));
+                ngDialog.open({ template: 'templateId' });
             });
 
             features.deselected.forEach(function(feature) {

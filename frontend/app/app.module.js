@@ -3,5 +3,6 @@
 
 angular
 	.module('app.module', [
-		'main.module'])
+		'main.module',
+		'ngDialog'])
 })();
