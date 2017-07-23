@@ -4,7 +4,7 @@
 	<title></title>
 	<link rel="stylesheet" href="node_modules/openlayers/dist/ol.css" type="text/css">
 </head>
-<body ng-controller="MapController as mapCtrl">
+<body ng-controller="MapController">
 	<a ui-sref="map">Map</a>
 	<div ui-view></div>
 </body>
@@ -23,9 +23,12 @@
 <script src="app/modules/map/map.routes.js"></script>
 <script src="app/modules/map/map.service.js"></script>
 
-<script src="app/modules/map/vector/vector.module.js"></script>
-<script src="app/modules/map/vector/vector.service.js"></script>
-
 <script src="app/modules/map/interaction/interaction.module.js"></script>
 <script src="app/modules/map/interaction/interaction.service.js"></script>
+
+<script src="app/modules/map/style/style.module.js"></script>
+<script src="app/modules/map/style/style.service.js"></script>
+
+<script src="app/modules/map/vector/vector.module.js"></script>
+<script src="app/modules/map/vector/vector.service.js"></script>
 </html>

@@ -2,9 +2,9 @@
 'use strict';
 
 /* ngInject */
-InteractionService.$inject = [];
+InteractionService.$inject = ['StyleService'];
 
-function InteractionService() {
+function InteractionService(StyleService) {
 
     function interactionMouseHover(map, vectorSource){
 
@@ -17,18 +17,36 @@ function InteractionService() {
 
         selectPointerMove.on('select', function(features) {
             features.selected.forEach(function(feature) {
-                console.log('selected');
+                feature.setStyle(getStyleTextFeature(feature));
             });
 
             features.deselected.forEach(function(feature) {
-                console.log('deselected');
+                feature.setStyle(StyleService.getStyleDefault());
             });    
         });
 
     };
 
+    function getStyleTextFeature(feature){
+
+        var style = new ol.style.Style({
+            stroke: new ol.style.Stroke({ color: '#000' }),
+            text: new ol.style.Text({
+                text: feature.get('name'),
+                font: '12px Calibri,sans-serif',
+                fill: new ol.style.Fill({ color: '#000' }),
+                stroke: new ol.style.Stroke({
+                    color: '#fff', width: 2
+                })
+            })
+        });
+
+        return style;
+    };
+
     return {
-        interactionMouseHover: interactionMouseHover
+        interactionMouseHover: interactionMouseHover,
+        getStyleTextFeature: getStyleTextFeature
     };
 }
 

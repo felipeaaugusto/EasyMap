@@ -2,9 +2,9 @@
 'use strict';
 
 /* ngInject */
-VectorService.$inject = [];
+VectorService.$inject = ['StyleService'];
 
-function VectorService() {
+function VectorService(StyleService) {
 
     function loadConfigVectorSource(){
     	
@@ -14,7 +14,8 @@ function VectorService() {
 		})
 
 		var vector = new ol.layer.Vector({
-            source: source
+            source: source,
+            style: StyleService.getStyleDefault()
       	})
 
 		return vector;
