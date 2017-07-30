@@ -18,12 +18,11 @@ function InteractionService(StyleService, ngDialog) {
         selectPointerMove.on('select', function(features) {
             features.selected.forEach(function(feature) {
                 feature.setStyle(getStyleTextFeature(feature));
-                ngDialog.open({ template: 'templateId' });
             });
 
             features.deselected.forEach(function(feature) {
                 feature.setStyle(StyleService.getStyleDefault());
-            });    
+            });
         });
 
     };
