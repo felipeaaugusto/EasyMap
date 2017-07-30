@@ -30,6 +30,8 @@ function MapService() {
                 maxResolution: 20000
             })
         });
+
+        return map;
     }; 
 
     return {

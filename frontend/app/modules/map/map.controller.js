@@ -2,15 +2,17 @@
 'use strict';
 
 /* ngInject */
-MapController.$inject = ['MapService', 'VectorService'];
+MapController.$inject = ['MapService', 'VectorService', 'InteractionService'];
 
-function MapController(MapService, VectorService) {
+function MapController(MapService, VectorService, InteractionService) {
 
 	//carrega source dos paises
 	var vectorSource = VectorService.loadConfigVectorSource();
 
 	//carrega configurações iniciais do map
-	MapService.loadConfigMap(vectorSource);
+	var map = MapService.loadConfigMap(vectorSource);
+
+	InteractionService.interactionMouseHover(map, vectorSource);
 }
 
 angular

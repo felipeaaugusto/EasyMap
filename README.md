@@ -1,1 +1,1 @@
-# EasyMap
+# BeWorld

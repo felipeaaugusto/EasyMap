@@ -4,7 +4,10 @@
 angular
 	.module('map.module', [
 		'map.controller',
+		'map.directives',
 		'map.routes',
 		'map.service',
-		'vector.service'])
+		'interaction.module',
+		'style.module',
+		'vector.module'])
 })();
