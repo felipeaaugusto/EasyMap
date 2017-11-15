@@ -2,9 +2,9 @@
 'use strict';
 
 /* ngInject */
-InteractionService.$inject = ['StyleService', 'ngDialog'];
+InteractionService.$inject = ['StyleService', 'ngDialog', 'ModalService'];
 
-function InteractionService(StyleService, ngDialog) {
+function InteractionService(StyleService, ngDialog, ModalService) {
 
     function interactionMouseHover(map, vectorSource){
         var selectPointerMove = new ol.interaction.Select({
@@ -22,14 +22,11 @@ function InteractionService(StyleService, ngDialog) {
         });
     };
 
-    function interactionMouseClick(map, vectorSource){
-        var selectMouseClick = new ol.interaction.Select({
-            condition: ol.events.condition.pointerMove,
-            layers: [vectorSource]
-        });
-        map.addInteraction(selectMouseClick);
-        selectMouseClick.on('select', function(features) {
-            
+    function interactionMouseClick(map){
+        map.on('click', function(e) {
+            map.forEachFeatureAtPixel(e.pixel, function (feature, layer) {
+                ModalService.openModalCountry(feature);
+            });
         });
     };
 

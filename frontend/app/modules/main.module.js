@@ -9,9 +9,10 @@ function config ($urlRouterProvider, $locationProvider){
   $locationProvider.hashPrefix('');
 };
 
-
 angular
 	.module('main.module', [
-		'map.module'])
+		'map.module',
+        'modal.module'
+    ])
 	.config(config);
 })();

@@ -10,6 +10,7 @@ function MapController(MapService, VectorService, InteractionService) {
 	//carrega configurações iniciais do map
 	var map = MapService.loadConfigMap(vectorSource);
 	InteractionService.interactionMouseHover(map, vectorSource);
+	InteractionService.interactionMouseClick(map);
 };
 
 angular
