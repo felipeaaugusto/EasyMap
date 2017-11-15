@@ -13,7 +13,10 @@ function MapService() {
 
 		var washingtonLonLat = [-47.822170,-15.792770];
         var washingtonWebMercator = ol.proj.fromLonLat(washingtonLonLat);
+        return newMap(raster, vectorSource, washingtonWebMercator);
+    };
 
+    function newMap(raster, vectorSource, washingtonWebMercator){
         var map = new ol.Map({
             controls: ol.control.defaults({
                 zoom: false,
@@ -30,12 +33,12 @@ function MapService() {
                 maxResolution: 20000
             })
         });
-
         return map;
-    }; 
+    };
 
     return {
         loadConfigMap: loadConfigMap,
+        newMap: newMap
     };
 }
 
