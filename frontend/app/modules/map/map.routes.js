@@ -10,7 +10,7 @@ function config ($urlRouterProvider, $stateProvider){
 
 	$stateProvider.state('map', {
 		title: 'Map',
-		url: '/map',
+		url: '/',
 		templateUrl: 'app/modules/map/map.view.html',
 		controller: 'MapController',
 		controllerAs: 'mapCtrl'
