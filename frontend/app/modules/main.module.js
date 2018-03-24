@@ -5,8 +5,8 @@
 config.$inject = ['$urlRouterProvider','$locationProvider'];
 
 function config ($urlRouterProvider, $locationProvider){
-  $urlRouterProvider.otherwise('/');
-  $locationProvider.hashPrefix('');
+    $urlRouterProvider.otherwise('/');
+    $locationProvider.hashPrefix('');
 };
 
 angular

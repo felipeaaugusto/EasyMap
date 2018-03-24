@@ -4,5 +4,6 @@
 angular
 	.module('app.module', [
 		'main.module',
-		'ngDialog'])
+		'ngDialog'
+	])
 })();
