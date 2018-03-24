@@ -1,3 +1,2 @@
 /frontend/node_modules/
-/frontend/bower_components/
-/frontend/npm-debug.log
+/backend/node_modules/
