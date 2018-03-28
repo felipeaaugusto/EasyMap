@@ -7,6 +7,10 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
+var createSchema = require('./db/createSchema');
+var createCollection = require('./db/createCollectionUsers');
+var insertCollection = require('./db/insertUser');
+
 var app = express();
 
 // view engine setup
@@ -37,5 +41,7 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+app.listen(3000, () => console.log('Example app listening on port 3000!'))
 
 module.exports = app;
