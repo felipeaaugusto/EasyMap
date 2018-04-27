@@ -11,19 +11,19 @@ router.use(function timeLog(req, res, next) {
 });
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
+router.get('/users', function(req, res, next) {
     db.collection("users").find({}).toArray(function(err, result) {
         if (err) throw err;
-        res.send(result);
+            res.send(result);
     });
 });
 
 // POST method route
 router.post('/user', function (req, res) {
-    var myobj = { name: "Felipe", address: "Darioa Manoel" };
+    var myobj = { name: "Felipe", address: "Tetse Oi Lou" };
     db.collection("users").insertOne(myobj, function(err, result) {
         if (err) throw err;
-        res.send("1 document inserted");
+            res.send("1 document inserted");
     });
 });
 
