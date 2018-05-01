@@ -6,9 +6,9 @@ VectorService.$inject = ['StyleService'];
 
 function VectorService(StyleService) {
 
-    function loadConfigVectorSource(){
+    function loadConfigVectorSource(urlVectorSource){
     	var source = new ol.source.Vector({
-			url: 'https://openlayers.org/en/v4.2.0/examples/data/geojson/countries.geojson',
+			url: urlVectorSource,
 			format: new ol.format.GeoJSON()
 		})
 		var vector = new ol.layer.Vector({

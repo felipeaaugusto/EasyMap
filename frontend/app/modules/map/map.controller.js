@@ -6,7 +6,7 @@ MapController.$inject = ['MapService', 'VectorService', 'InteractionService'];
 
 function MapController(MapService, VectorService, InteractionService) {
 	//carrega source dos paises
-	var vectorSource = VectorService.loadConfigVectorSource();
+	var vectorSource = VectorService.loadConfigVectorSource('http://localhost:3000/countries');
 	//carrega configurações iniciais do map
 	var map = MapService.loadConfigMap(vectorSource);
 	InteractionService.interactionMouseHover(map, vectorSource);
