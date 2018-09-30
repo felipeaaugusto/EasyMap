@@ -1,0 +1,9 @@
+/* buttons */
+*:focus {
+    outline: none;
+}
+
+/* map */
+div #map{
+    height: 100vh;
+}

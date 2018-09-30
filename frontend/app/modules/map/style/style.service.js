@@ -6,7 +6,7 @@ StyleService.$inject = [];
 
 function StyleService() {
 
-    function getStyleDefault(feature){
+    function getStyleDefault(){
         var style = new ol.style.Style({
             stroke: new ol.style.Stroke({ color: '#000' })
         });
