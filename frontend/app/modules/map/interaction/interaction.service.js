@@ -2,9 +2,9 @@
 'use strict';
 
 /* ngInject */
-InteractionService.$inject = ['StyleService', 'ngDialog', 'ModalService'];
+InteractionService.$inject = ['StyleService', 'ModalService'];
 
-function InteractionService(StyleService, ngDialog, ModalService) {
+function InteractionService(StyleService, ModalService) {
 
     function interactionMouseHover(map, vectorSource){
         var selectPointerMove = new ol.interaction.Select({

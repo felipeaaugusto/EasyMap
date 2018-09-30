@@ -5,7 +5,7 @@ var dbConnection = function () {
 
     function connectToServer(callback) {
         MongoClient.connect("mongodb://localhost:27017/", function(err, db){
-            _db = db.db("test");
+            _db = db.db("beworld");
             return callback(err);
         });
     }

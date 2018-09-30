@@ -6,8 +6,8 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 // var createSchema = require('./db/createSchema');
-// var createCollection = require('./db/createCollectionUsers');
-// var insertCollection = require('./db/insertUser');
+// var createCollection = require('./db/createCollection');
+// var insertCollection = require('./db/insertDocument');
 
 var app = express();
 var dbConnection = require('./db/db');
@@ -17,7 +17,7 @@ dbConnection.connectToServer(function(err){
 
     // start the rest of your app here
     var indexRouter = require('./routes/index');
-    var usersRouter = require('./routes/users');
+    // var usersRouter = require('./routes/users');
     var countriesRouter = require('./routes/countries');
     
     // view engine setup
@@ -31,7 +31,7 @@ dbConnection.connectToServer(function(err){
     app.use(express.static(path.join(__dirname, 'public')));
     
     app.use('/', indexRouter);
-    app.use('/', usersRouter);
+    // app.use('/', usersRouter);
     app.use('/', countriesRouter);
     
     // catch 404 and forward to error handler
